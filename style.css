@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right, #ffecd2, #fcb69f);
+  font-family: 'Brush Script MT', cursive;
+  color: #4b2e2e;
+  overflow-x: hidden;
+  animation: gradientBackground 10s ease-in-out infinite;
+}
+
+.container {
+  text-align: center;
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  animation: fadeIn 2s ease-in;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: popIn 1.5s ease, glowing 1.5s infinite alternate;
+}
+
+@keyframes glowing {
+  0% {
+    text-shadow: 0 0 5px #ff66b2, 0 0 10px #ff66b2, 0 0 15px #ff66b2;
+  }
+  100% {
+    text-shadow: 0 0 20px #ff66b2, 0 0 30px #ff66b2, 0 0 40px #ff66b2;
+  }
+}
+
+.poem {
+  font-size: 1.5rem;
+  margin: 2rem 0;
+  line-height: 1.6;
+  animation: slideIn 2s ease;
+}
+
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.photos img {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photos img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.from {
+  font-size: 1.2rem;
+  margin-top: 3rem;
+  animation: fadeIn 3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0 }
+  100% { transform: scale(1); opacity: 1 }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(50px); opacity: 0 }
+  to { transform: translateY(0); opacity: 1 }
+}
+
+@keyframes gradientBackground {
+  0% {
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+  }
+  50% {
+    background: linear-gradient(to right, #fcb69f, #ffecd2);
+  }
+  100% {
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .poem {
+    font-size: 1.2rem;
+  }
+
+  .photos img {
+    width: 100px;
+    height: 140px;
+  }
+}
